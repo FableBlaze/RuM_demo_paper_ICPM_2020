@@ -1,0 +1,11 @@
+activity IV_Antibiotics
+activity ER_Triage
+bind ER_Triage: group
+activity ER_Registration
+activity ER_Sepsis_Triage
+bind ER_Sepsis_Triage: group
+group: A, B, C
+Chain Response[ER_Triage, ER_Sepsis_Triage] | | |
+Init[ER_Registration] | |
+Alternate Response[IV_Antibiotics, ER_Sepsis_Triage] | | |
+Alternate Response[ER_Registration, ER_Sepsis_Triage] | | |

@@ -1,0 +1,14 @@
+activity IV_Antibiotics
+activity ER_Triage
+activity ER_Registration
+activity ER_Sepsis_Triage
+Exactly1[ER_Registration] | |
+Chain Response[ER_Triage, ER_Sepsis_Triage] | | |
+Alternate Succession[ER_Registration, ER_Triage] | | |
+Init[ER_Registration] | |
+Alternate Response[IV_Antibiotics, ER_Sepsis_Triage] | | |
+Alternate Response[ER_Registration, ER_Sepsis_Triage] | | |
+Existence3[ER_Sepsis_Triage] | |
+Chain Succession[ER_Registration, IV_Antibiotics] | | |
+Exactly1[IV_Antibiotics] | |
+Exactly1[ER_Triage] | |
